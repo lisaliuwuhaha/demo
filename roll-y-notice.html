@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>滚动公告栏</title>
+    <style type="text/css">
+        body{padding: 0;margin:0;background-color:#f9f9f9}
+        .ul1{list-style: none;margin: 0}
+        li{padding: 5px;}
+    </style>
+</head>
+<body>
+<div style="height: 60px;background-color: #191e29;">
+    <p style="margin: 0;color: #fff;line-height: 60px;text-align: center;">这是用jQuery实现的上下滚动公告栏</p>
+</div>
+    <div style="position: relative;height: 26px;overflow: hidden;">
+        <ul class="ul1">
+            <li>我是1</li>
+            <li>我是2</li>
+            <li>我是3</li>
+            <li>我是4</li>
+        </ul>
+        <img style="position: absolute;top: 9px;left: 20px" width="15px" height="15px" src="./新建文件夹/抽奖活动H5.png">
+    </div>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        var num=$(".ul1").find("li").length;
+        console.log("直接运行"+num);
+        if (num>1) {
+            setInterval(function(){ 
+            $('.ul1').animate({
+                marginTop:"-26px"
+            },500,function(){
+                $(this).css({marginTop : "0"}).find("li:first").appendTo(this);
+            });
+        }, 3000);
+        }
+                
+    });
+</script>
+</body>
+</html>

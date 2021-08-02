@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>交易员大赛手机端</title>
+		<link rel="stylesheet" type="text/css" href="css/commons.css" />
+		<link rel="stylesheet" type="text/css" href="css/mobtraderCompetition.css" />
+	</head>
+
+	<body>
+
+
+		<div class="content-con">
+			<div class="pop pop-1-0-1" id="pop">
+				<!-- <i class="iconfont icon-exclamation">&#xe605;</i> -->
+				<p class="title">未登录/登录过期，请登录</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-wait">我再看看</button>
+					<button type="button" class="btn btn-login">去登录</button>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="anicircle circle1"></div>
+		<div class="anicircle circle2"></div>
+		<div class="anicircle circle3"></div>
+		<div class="anicircle circle4"></div>
+		<div class="anicircle circle5"></div>
+		<div class="anicircle circle6"></div>
+		<div class="anicircle circle7"></div>
+		<a href="./mobprofile.html" class="tohome">
+			<i class="iconfont">&#xe607;</i>
+		</a>
+		<a class="toregist" href="./mobilereg.html">
+			<span>立即</span>
+			<span>注册</span>
+		</a>
+		<div class="kefu">
+			<i class="iconfont">&#xe654;</i>
+			<div class="customerSer-con">
+				<div class="customerSer-title">联系客服</div>
+				<div class="customerSer-code">
+					<div class="code-1">
+						<div class="image img1"></div>
+						<p>客服微信1</p>
+					</div>
+					<div class="code-2">
+						<div class="image img2"></div>
+						<p>客服微信2</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- 个人信息 -->
+		<div class="header-con">
+			<div class="anicircle"></div>
+		</div>
+		<div class="tcbg"></div>
+		<div class="hello-info  hide">
+			<div>
+				<div class="avatar">
+					<img src="" alt="头像" onerror="javascript:this.src='http://www.alphazone.com.cn/resource/default_avatar.jpg'">
+				</div>
+				<div class="hello">
+					<p class="title">Hello!</p>
+					<p>--</p>
+				</div>
+			</div>
+			<p class="first-line">了解更多功能·请电脑登录</p>
+			<p>http://www.alphazone.com.cn</p>
+		</div>
+		<div class="register-con recon1" data-id="1">
+			<div class="input-group">
+				<div class="reg-input reg-input1">
+					<input type="text" class="username" autocomplete="off" placeholder="请输入用户名">
+					<i class="fas fa-check-circle reg reg-success" minlength="6"></i>
+				</div>
+				<div class="reg-input reg-input2">
+					<input type="text" autocomplete="off" class="psd" placeholder="请输入密码" minlength="6" onfocus="this.type='password'">
+					<i class="fas fa-check-circle reg reg-success"></i>
+				</div>
+				<div class="reg-input reg-input3">
+					<input type="text" class="phone" autocomplete="off" placeholder="请输入手机号">
+					<button class="verfiy">验证</button>
+				</div>
+				<div class="reg-input reg-input4">
+					<input type="text" class="code" autocomplete="off" placeholder="请输入验证码">
+					<i class="fas fa-check-circle reg reg-success"></i>
+				</div>
+				<a href="./moblogin.html" class="tologin">
+					已有账号，去登录<i class="iconfont">&#xe719;</i>
+				</a>
+			</div>
+			<button class="tosignup">立即注册</button>
+			<p class="first-line">了解更多功能·请电脑登录</p>
+			<p>http://www.alphazone.com.cn</p>
+		</div>
+		<div class="personal-info">
+			<div class="row1">
+				<div class="rank">
+					<p class="title">排名</p>
+					<p class="subtitle">Top</p>
+					<p>No.--</p>
+				</div>
+				<div class="initial_funding">
+					<p class="title">初始资金</p>
+					<p class="subtitle">Initial Capital</p>
+					<p>$ --</p>
+				</div>
+				<div class="balance">
+					<p class="title">余额</p>
+					<p class="subtitle">Balance</p>
+					<p>$ --</p>
+				</div>
+			</div>
+			<div class="row2">
+				<div class="equity">
+					<p class="title">净值</p>
+					<p class="subtitle">Net</p>
+					<p>$ --</p>
+				</div>
+				<div class="last_week_equity">
+					<p class="title">上周净值</p>
+					<p class="subtitle">Last Week Net</p>
+					<p>$ --</p>
+				</div>
+				<div class="last_month_equity">
+					<p class="title">上月净值</p>
+					<p class="subtitle">Last Month Net</p>
+					<p>$ --</p>
+				</div>
+			</div>
+			<div class="row3">
+				<div class="activity">
+					<p class="title">活跃度</p>
+					<p class="subtitle">Activity</p>
+					<p>--</p>
+				</div>
+				<div class="week_activity">
+					<p class="title">本周活跃度</p>
+					<p class="subtitle">Week Activity</p>
+					<p>--</p>
+				</div>
+				<div class="month_activity">
+					<p class="title">本月活跃度</p>
+					<p class="subtitle">Month Activity</p>
+					<p>--</p>
+				</div>
+			</div>
+		</div>
+		<div class="hor-line line1"></div>
+		<!-- 总排名 -->
+		<div class="rank-con">
+			<div class="rank-title">
+				<i class="iconfont icon-rank">&#xea88;</i>总排名
+			</div>
+			<div class="hor-line"></div>
+			<div class="clear"></div>
+			<div class="rank-category">
+				<span class="week active">周榜</span>
+				<span class="month">月榜</span>
+				<span class="total">总榜</span>
+			</div>
+			<div class="rank-description">
+				<p>赛季分为周榜, 月榜和总榜 以净值收益率排名, 收益率相同以高净值优先;</p>
+				<p>每小时更新一次数据；当前数据更新时间：<span class="updateTime">2019/06/29 05:00</span>;</span></p>
+			</div>
+
+			<div class="rank-detail">
+				<ul class="detail-head">
+					<li class="head rank">排名</li>
+					<li class="head user">用户名</li>
+					<li class="head balance">余额</li>
+					<li class="head networth">净值</li>
+					<li class="head yield">收益率</li>
+				</ul>
+				<div class="clear"></div>
+				<ul class="detail-body">
+					<!-- 动态添加 -->
+				</ul>
+			</div>
+		</div>
+		<div class="hor-line line2"></div>
+		<!-- 个人排名 -->
+		<div class="presonrank-con">
+			<div class="rank-title">
+				<i class="iconfont icon-rank">&#xea88;</i>个人总榜排名
+			</div>
+			<div class="hor-line"></div>
+			<div class="clear"></div>
+			<div class="rank-detail">
+				<ul class="detail-head">
+					<li class="head rank">排名</li>
+					<li class="head user">用户名</li>
+					<li class="head balance">余额</li>
+					<li class="head networth">净值</li>
+				</ul>
+				<div class="clear"></div>
+				<ul class="detail-body">
+					<!--  -->
+				</ul>
+			</div>
+		</div>
+		<div class="hor-line line3"></div>
+		<!-- 参赛交易员 -->
+		<div class="traders-con">
+			<div class="rank-title">
+				<i class="iconfont icon-rank">&#xe609;</i>参赛交易员
+			</div>
+			<div class="hor-line"></div>
+			<div class="clear"></div>
+			<div class="trader-list">
+				<div class="traderitem-row row1"></div>
+				<div class="traderitem-row row2"></div>
+				<div class="traderitem-row row3"></div>
+			</div>
+		</div>
+		<div class="hor-line line4"></div>
+		<!-- 奖项设置 -->
+		<div class="award-con">
+			<div class="rank-title">
+				<i class="iconfont icon-rank">&#xe608;</i>奖项设置
+			</div>
+			<div class="hor-line"></div>
+			<div class="clear"></div>
+			<div class="btn-group bt1">
+				<button class="all-ranked">总榜</button>
+			</div>
+			<div class="award-tip at1">
+				帐户盈利且活跃度大于20
+			</div>
+			<div class="award-list">
+				<div class="award-item">
+					<div class="medalleft"></div>
+					<div class="placeinfo">
+						<p>总榜</p>
+						<p class="ranknum">冠军奖励</p>
+						<p>Champion</p>
+					</div>
+					<div class="coin-con">
+						<div class="coinicon"></div>
+						<div class="coinnum"><i>2000</i>coin</div>
+					</div>
+					<div class="and">&</div>
+					<div class="certificate"></div>
+				</div>
+				<div class="award-item">
+					<div class="medalleft r2"></div>
+					<div class="placeinfo">
+						<p>总榜</p>
+						<p class="ranknum">亚军奖励</p>
+						<p>Second</p>
+					</div>
+					<div class="coin-con">
+						<div class="coinicon"></div>
+						<div class="coinnum"><i>1000</i>coin</div>
+					</div>
+					<div class="and">&</div>
+					<div class="certificate"></div>
+				</div>
+				<div class="award-item">
+					<div class="medalleft r3"></div>
+					<div class="placeinfo">
+						<p>总榜</p>
+						<p class="ranknum">季军奖励</p>
+						<p>Third</p>
+					</div>
+					<div class="coin-con">
+						<div class="coinicon"></div>
+						<div class="coinnum"><i>500</i>coin</div>
+					</div>
+					<div class="and">&</div>
+					<div class="certificate"></div>
+				</div>
+				<div class="award-item">
+					<div class="medalleft r4"></div>
+					<div class="placeinfo">
+						<p>总榜</p>
+						<p class="ranknum">TOP 4~10</p>
+						<p>No.4-10</p>
+					</div>
+					<div class="coin-con">
+						<div class="coinicon"></div>
+						<div class="coinnum"><i>100</i>coin</div>
+					</div>
+					<div class="and">&</div>
+					<div class="certificate"></div>
+				</div>
+				<div class="award-item">
+					<div class="medalleft r4"></div>
+					<div class="placeinfo">
+						<p>总榜</p>
+						<p class="ranknum">TOP 11~50</p>
+						<p>No.11-50</p>
+					</div>
+					<div class="coin-con">
+						<div class="coinicon"></div>
+						<div class="coinnum"><i>50</i>coin</div>
+					</div>
+					<div class="and">&</div>
+					<div class="certificate"></div>
+				</div>
+				<div class="award-item">
+					<div class="medalleft r4"></div>
+					<div class="placeinfo">
+						<p>总榜</p>
+						<p class="ranknum">TOP 51~100</p>
+						<p>No.51-100</p>
+					</div>
+					<div class="coin-con">
+						<div class="coinicon"></div>
+						<div class="coinnum"><i>20</i>coin</div>
+					</div>
+					<div class="and">&</div>
+					<div class="certificate"></div>
+				</div>
+			</div>
+			<div class="btn-group">
+				<button class="month-ranked">月榜</button>
+			</div>
+			<div class="award-tip">
+				帐户盈利且活跃度大于10
+			</div>
+			<div class="award-item sp">
+				<div class="medalleft r4"></div>
+				<div class="placeinfo">
+					<p>月榜</p>
+					<p class="ranknum">TOP 1~10</p>
+					<p>No.1-10</p>
+				</div>
+				<div class="coin-con">
+					<div class="coinicon"></div>
+					<div class="coinnum"><i>20</i>coin</div>
+				</div>
+				<div class="and">&</div>
+				<div class="certificate"></div>
+			</div>
+			<div class="btn-group">
+				<button class="month-ranked">交易激励奖</button>
+			</div>
+			<div class="award-item sp jlaward">
+				<p class="gongshi">（每周净值-每周初始资金）x0.01coin+Vx0.01coin</p>
+				<p>按周发放,要求周初始资金>5000,奖励上限为20coin</p>
+			</div>
+		</div>
+		<!-- 大赛规则 -->
+		<div class="rule-con">
+			<div class="hor-line hr1"></div>
+			<div class="rulecon">
+				<div class="rank-title">
+					<i class="iconfont">&#xe641;</i>大赛规则
+				</div>
+				<div class="hor-line"></div>
+				<div class="clear"></div>
+				<p>
+					本次大赛是由Alpha集团利用其资源打造的供应链金融生态圈的基础环节。大赛秉承“传播金融知识技能，发现和培养交易员，交流互动开发优秀交易策略”的理念，旨在引进欧洲联合共享交易室和专业基金管理人概念，从而为初学者提供接触市场的机会。为有志于从事衍生品交易的人提供全方位的帮助和支持；为专业人士提供专业的金融工作环境。
+				</p>
+				<div class="module">
+					<p><span>参赛对象：</span>所有报名者</p>
+					<p><span>报名时间：</span>2019-08-15 05:00:00 -- 10-26 05:00:00</p>
+					<p><span>比赛时间：</span>2019-09-02 05:00:00 -- 10-26 05:00:00</p>
+				</div>
+				<div class="module">
+					<p><span>报名规则</span></p>
+					<p>报名截止日期前可随时在官网页面提交信息报名;报名后会自动生成相应比赛账户。</p>
+				</div>
+				<div class="module">
+					<p>2019年09月02日前报名的账户从2019年09月02日开始计算大赛数据; 2019年09月02日之后报名的账户从报名成功之后即时开始计算。</p>
+				</div>
+				<div class="module">
+					<p><span>赛制规则</span></p>
+					<p>初始交易资金：$5000</p>
+					<p>杠杆：100倍</p>
+					<p>交易产品范围：不限</p>
+				</div>
+				<div class="module">
+					<p>比赛中交易账户可以使用即时成交，挂单和限价单（LIMIT& STOP），套息交易，锁仓交易等交易方式；</p>
+				</div>
+				<div class="module">
+					<p>参赛者如在比赛中经核查由同一IP地址或与互相认识的客户，进行多个账户之间相反方向的交易（即A账户买入，B账户卖空），比赛资格将被取消；</p>
+				</div>
+				<div class="module">
+					<p>赛季分为周榜，月榜和总榜。按照不同的时间周期进行评选。</p>
+					<p>(按净值收益率排名, 收益率相同以高净值优先)；</p>
+				</div>
+				<div class="module">
+					<p>大赛月榜赛制时间非自然月，为了便于计算采用以下周期范围:</p>
+					<p><span>（每周更新榜单）</span></p>
+				</div>
+				<div class="tbtitle">
+					<div>赛制时间</div>
+					<div>北京时间GMT+8</div>
+				</div>
+				<div class="tbbody">
+					<div>第1月</div>
+					<p>2019-09-02 05:00:00 -- 09-28 05:00:00</p>
+					<div>第2月</div>
+					<p>2019-09-30 05:00:00 -- 10-26 05:00:00</p>
+				</div>
+				<div class="module">
+					<p><span>任何情况下, 可以使用coin重置帐户.</span></p>
+				</div>
+			</div>
+		</div>
+		<!--底部 -->
+		<div class="footer-con">
+			<div class="topcon">
+				<div class="rank-title">
+					<i class="iconfont">&#xe60a;</i>活动条款
+				</div>
+				<div class="hor-line"></div>
+				<div class="clear"></div>
+				<p>所有参赛账户在大赛过程中，不允许修改只读密码。若有修改则视为退赛。</p>
+				<p>月榜奖励将在该月比赛结束后的7个工作日内发放；总榜奖励将在赛季结束后统一发放。</p>
+				<p>主办方有权取消任何违反比赛规则，使用不当交易策略，破坏比赛运作或有欺诈行为的参赛者参赛资格。</p>
+				<p>主办方有权根据法律法规，司法或行政命令的要求以及活动的实际情况取消，中止或终止该活动。</p>
+				<p>所有参赛者被默认知晓交易风险，比赛规则，评选机制，平台交易产品的交易规则等。</p>
+				<p>主办方及合作方不负责由参赛者本人或第三方技术原因/网络连接问题，造成对参赛者本身参与大赛的直接或间接影响。</p>
+				<p>以上所有时间均为北京时间（GMT+8）时间。</p>
+			</div>
+		</div>
+		<!-- 最底部注册 -->
+		<div class="hor-line lasthrline"></div>
+		<div class="register-con recon2" data-id="2">
+			<div class="input-group">
+				<div class="reg-input reg-input1">
+					<input type="text" class="username" autocomplete="off" placeholder="请输入用户名">
+					<i class="fas fa-check-circle reg reg-success" minlength="6"></i>
+				</div>
+				<div class="reg-input reg-input2">
+					<input type="text" autocomplete="off" class="psd" placeholder="请输入密码" minlength="6" onfocus="this.type='password'">
+					<i class="fas fa-check-circle reg reg-success"></i>
+				</div>
+				<div class="reg-input reg-input3">
+					<input type="text" class="phone" autocomplete="off" placeholder="请输入手机号">
+					<button class="verfiy">验证</button>
+				</div>
+				<div class="reg-input reg-input4">
+					<input type="text" class="code" autocomplete="off" placeholder="请输入验证码">
+					<i class="fas fa-check-circle reg reg-success"></i>
+				</div>
+				<a href="./moblogin.html" class="tologin">
+					已有账号，去登录<i class="iconfont">&#xe719;</i>
+				</a>
+			</div>
+			<button class="tosignup">立即注册</button>
+			<p>了解更多功能·请电脑登录 http://www.alphazone.com.cn</p>
+		</div>
+
+		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			 $(document).ready(function () {
+			      let viewportHeight = window.screen.height,viewportWidth = window.screen.width;
+							$('body').css({"height":7.96*viewportHeight+"px","width":viewportWidth+"px"})
+							$('.header-con').css({"height":0.075*viewportHeight+"px","top":0.069*viewportHeight+"px"})
+							$('.tcbg').css({"height":0.645*viewportHeight+"px"})
+							$('.hello-info').css({"height":0.3*viewportHeight+"px","top":0.05*viewportHeight+"px"})
+							$('.hello-info .avatar').css({"height":0.108*viewportHeight+"px","width":0.108*viewportHeight+"px"})
+							$('.hello-info .avatar img').css({"width":0.108*viewportHeight+"px"})
+							$('.personal-info .row1, .personal-info .row2, .personal-info .row3').css({"height":0.103*viewportHeight+"px"})
+							$('.rank-con .detail-body>li').css({"height":0.053*viewportHeight+"px"})
+							$('.rank-con .detail-body>li:nth-child(-n+3)').css({"height":0.063*viewportHeight+"px"})
+							$('.register-con.recon1').css({"height":0.3*viewportHeight+"px","top":0.05*viewportHeight+"px"})
+							$('.register-con.recon2').css({"height":0.3*viewportHeight+"px","top":0.2*viewportHeight+"px"})
+							$('.personal-info').css({"height":0.332*viewportHeight+"px","top":0.1*viewportHeight+"px"})
+							$('.presonrank-con').css({"height":viewportHeight+"px","top":0.2*viewportHeight+"px"})
+							$('.rank-con').css({"height":viewportHeight+"px","top":0.22*viewportHeight+"px"})
+							$('.rank-title').css({"margin-top":0.02*viewportHeight+"px"})
+							$('.hor-line').css({"margin-bottom":0.02*viewportHeight+"px"})
+							$('.rank-con .detail-head').css({"margin-bottom":0.015*viewportHeight+"px"})
+							$('.rank-con .rank-description').css({"margin-top":0.015*viewportHeight+"px","margin-bottom":0.015*viewportHeight+"px"})
+							$('.rank-con .detail-body').css({"height":(0.56*viewportHeight+40)+"px"})
+							$('.rank-con .detail-body>li').css({"height":0.053*viewportHeight+"px"})
+							$('.rank-con .detail-body .list-item.user .avatar,.presonrank-con .detail-body .list-item.user .avatar').css({"height":0.03*viewportHeight+"px","width":0.003*viewportHeight+"px"})
+							$('.rank-con .detail-body .list-item.user img,.presonrank-con .detail-body .list-item.user .avatar img ').css({"width":0.03*viewportHeight+"px"})
+							$('.presonrank-con .rank-title').css({"margin-top":0.07*viewportHeight+"px"})
+							$('.presonrank-con .hor-line').css({"margin-bottom":0.04*viewportHeight+"px"})
+							$('.presonrank-con .detail-head').css({"margin-bottom":0.015*viewportHeight+"px"})
+							$('.presonrank-con .detail-body>li').css({"height":0.053*viewportHeight+"px"})
+							$('.presonrank-con .detail-body>li.active').css({"height":0.063*viewportHeight+"px"})
+							$('.traders-con').css({"height":0.5*viewportHeight+"px","top":0.11*viewportHeight+"px"})
+							$('.traders-con .trader-list').css({"height":0.315*viewportHeight+"px"})
+							$('.award-con').css({"height":1.39*viewportHeight+"px","top":0.12*viewportHeight+"px"})
+							$('.rule-con').css({"height":1.32*viewportHeight+"px","top":0.21*viewportHeight+"px"})
+							$('.footer-con').css({"height":0.74*viewportHeight+"px","top":0.26*viewportHeight+"px"})
+							$('.traders-con .trader-list .traderitem-row').css({"top":0.105*viewportHeight+"px"})
+							$('.hor-line.lasthrline').css({"top":0.2*viewportHeight+"px"})
+							$('.hor-line.line1').css({"top":0.25*viewportHeight+"px"})
+							$('.hor-line.line2').css({"top":0.24*viewportHeight+"px"})
+							$('.hor-line.line3').css({"top":0.1*viewportHeight+"px"})
+							$('.hor-line.line4').css({"top":0.15*viewportHeight+"px"})
+							$('.rule-con .rulecon').css({"line-height":0.028*viewportHeight+"px"})
+							$('.award-con .award-item').css({"height":0.114*viewportHeight+"px","margin-bottom":0.013*viewportHeight+"px"})
+							$('.rule-con .rulecon .tbtitle').css({"height":0.045*viewportHeight+"px","line-height":0.045*viewportHeight+"px"})
+			        $('.rule-con .rulecon .tbbody').css({"height":0.09*viewportHeight+"px","line-height":0.045*viewportHeight+"px"})
+					console.log($('body').width())
+			    })
+		</script>
+	</body>
+
+</html>

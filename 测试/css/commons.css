@@ -1,0 +1,541 @@
+html,
+body {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/*#FBECCB*/
+/*#FCF8E2*/
+/*#f68300*/
+body {
+    background: #f2f7fa;
+    font: 12px/1.5 "Microsoft Yahei", "Lucida Grande", Helvetica, tahoma, arial, Verdana, sans-serif;
+}
+
+@font-face {
+    font-family: 'iconfont';  /* project id 1272761 */
+    src: url('//at.alicdn.com/t/font_1272761_q9e90w9lhpb.eot');
+    src: url('//at.alicdn.com/t/font_1272761_q9e90w9lhpb.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1272761_q9e90w9lhpb.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1272761_q9e90w9lhpb.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1272761_q9e90w9lhpb.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1272761_q9e90w9lhpb.svg#iconfont') format('svg');
+  }
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    border: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+input[name='username'] {
+    background-color: #f0f0f0;
+}
+
+input[type='checkbox'] {
+    cursor: pointer;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-layout {
+    position: relative;
+    min-width: 1200px;
+    min-height: 100%;
+    background: #f2f7fa;
+    color: #dedede;
+}
+
+.page-layout .page-title {
+    position: fixed;
+    text-align: right;
+    top: 50px;
+    left: 0;
+    color: #777;
+    font-weight: bold;
+    display: inline-block;
+    background: #e3e5e7;
+    width: 98vw;
+    height: 40px;
+    line-height: 40px;
+    padding-right: 50px;
+    z-index: 994;
+    /* z-index: 994;          保留意见，WHY ADD THIS? */
+}
+
+.trader-item {
+    margin-top: 5px;
+}
+
+.trader-item.dash {
+    margin-top: 50px;
+}
+
+.show-1 {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.link {
+    color: #999;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #ccc;
+}
+
+.link-text {
+    color: #999;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+    /*background: #239EB3;*/
+    background: #E5EDF2;
+    border: none;
+    outline: none;
+    vertical-align: middle;
+    font-size: 11px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #777;
+}
+
+.btn-mini {
+    height: 25px;
+    padding: 0 10px;
+    line-height: 25px;
+    font-size: 12px;
+}
+
+.vi-c-1 {
+    color: #6fa9c7;
+}
+
+.vi-c-2 {
+    color: #eaf1f5;
+}
+
+.vi-b-1 {
+    background: #6fa9c7;
+}
+
+.vi-b-2 {
+    background: #eaf1f5;
+}
+
+.trader-con {
+    margin-left: 200px;
+    margin-top: 40px;
+    min-height: 572px;
+    background: #f2f7fa;
+    color: #666;
+    padding: 30px 30px 20px 30px;
+    z-index: 995;
+}
+
+.loading {
+    margin: 10px auto;
+    display: block;
+    height: 65px;
+    width: 65px;
+    opacity: .6;
+    background: url(../../image/loading.gif) no-repeat;
+}
+
+.onloadingImg {
+    position: relative;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    border: 1px dashed #ccc;
+    width: 80%;
+    padding: 20px;
+}
+
+.onloadingImg i {
+    color: #eee;
+    font-size: 100px;
+}
+
+.onloadingImg .plus {
+    position: absolute;
+    font-size: 20px;
+    bottom: 3px;
+    right: 3px;
+    color: #aaa;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.onloading-img {
+    max-width: 100%;
+}
+
+.viewImg {
+    overflow: scroll;
+    height: 500px;
+    display: none;
+    max-width: 60%;
+    margin-left: 300px;
+    /*margin-top: 50px;*/
+    z-index: 1003;
+    position: fixed;
+    top: 50px;
+    background: #333;
+    padding: 30px;
+    border: 3px dashed #666;
+}
+
+.viewImg .cancel {
+    position: absolute;
+    padding: 5px;
+    font-size: 18px;
+    top: 3px;
+    left: 3px;
+    cursor: pointer;
+}
+
+.viewImg .viewImg-img {
+    position: relative;
+    z-index: 1004;
+    max-width: 100%;
+}
+
+.loading-in-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+    background: url(../../image/Rolling-1s-25px.svg) no-repeat;
+    height: 25px;
+    width: 25px;
+}
+
+.status-con .status {
+    display: inline-block;
+}
+
+.status-con .verify {
+    margin-left: 5px;
+    color: #999;
+}
+
+.status-con .verify-item {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+/* toggle */
+.status-con .status.on-off-line-con {
+    position: relative;
+    height: 20px;
+    width: 44px;
+    background: #6fa9c7;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+    margin-right: 12px;
+    top: 4px;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -ms-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+}
+
+.status-con .status.on-off-line-con.on {
+    background: #ccc;
+}
+
+.status-con .status.on-off-line-con .on-off-line {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    left: 0px;
+    top: 50%;
+    margin-top: -11px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -ms-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+}
+
+.status-con .status.on-off-line-con .on-line {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    right: 0px;
+    top: 50%;
+    margin-top: -11px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -ms-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+}
+
+.status-con .status.on-off-line-con.ons {
+    background: #ccc;
+}
+
+.status-con .status.on-off-line-con.offs {
+    background: #6fa9c7;
+}
+
+.success02 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -18.5px;
+    margin-top: -18.5px;
+    height: 37px;
+    width: 37px;
+}
+
+.none-data {
+    display: block;
+    margin-top: 15%;
+    margin-left: 6%;
+    color: #ccc;
+}
+
+/* set font */
+.font-m1 {
+    font-size: 11px;
+}
+
+.font {
+    font-size: 12px;
+}
+
+.font-p1 {
+    font-size: 13px;
+}
+
+.font-p2 {
+    font-size: 14px;
+}
+
+.font-p6 {
+    font-size: 16px;
+}
+
+.font-p7 {
+    font-size: 18px;
+}
+
+.font-p10 {
+    font-size: 22px;
+}
+
+/* font-size */
+@media screen and (min-width: 1280px) {
+    .font-m1 {
+        font-size: calc(11px + 1*(100vw - 1280px)/86);
+    }
+
+    .font {
+        font-size: calc(12px + 1*(100vw - 1280px)/86);
+    }
+
+    .font-p1 {
+        font-size: calc(13px + 1*(100vw - 1280px)/86);
+    }
+
+    .font-p2 {
+        font-size: calc(14px + 1*(100vw - 1280px)/86);
+    }
+
+    .font-p7 {
+        font-size: calc(18px + 1*(100vw - 1280px)/86);
+    }
+
+    .font-p6 {
+        font-size: calc(16px + 1*(100vw - 1280px)/86);
+    }
+
+    .font-p10 {
+        font-size: calc(22px + 1*(100vw - 1280px)/86);
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .font-m1 {
+        font-size: calc(11px + 1*(100vw - 1366px)/74);
+    }
+
+    .font {
+        font-size: calc(12px + 1*(100vw - 1366px)/74);
+    }
+
+    .font-p1 {
+        font-size: calc(13px + 1*(100vw - 1366px)/74);
+    }
+
+    .font-p2 {
+        font-size: calc(14px + 1*(100vw - 1366px)/74);
+    }
+
+    .font-p6 {
+        font-size: calc(16px + 1*(100vw - 1366px)/74);
+    }
+
+    .font-p7 {
+        font-size: calc(18px + 1*(100vw - 1366px)/74);
+    }
+
+    .font-p10 {
+        font-size: calc(22px + 1*(100vw - 1366px)/74);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .font-m1 {
+        font-size: calc(11px + 2*(100vw - 1440px)/480);
+    }
+
+    .font {
+        font-size: calc(12px + 2*(100vw - 1440px)/480);
+    }
+
+    .font-p1 {
+        font-size: calc(13px + 2*(100vw - 1440px)/480);
+    }
+
+    .font-p2 {
+        font-size: calc(14px + 2*(100vw - 1440px)/480);
+    }
+
+    .font-p6 {
+        font-size: calc(16px + 2*(100vw - 1440px)/480);
+    }
+
+    .font-p7 {
+        font-size: calc(18px + 2*(100vw - 1440px)/480);
+    }
+
+    .font-p10 {
+        font-size: calc(22px + 2*(100vw - 1440px)/480);
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .font-m1 {
+        font-size: calc(11px + 20*(100vw - 1920px)/1920);
+    }
+
+    .font {
+        font-size: calc(12px + 20*(100vw - 1920px)/1920);
+    }
+
+    .font-p1 {
+        font-size: calc(13px + 20*(100vw - 1920px)/1920);
+    }
+
+    .font-p2 {
+        font-size: calc(14px + 20*(100vw - 1920px)/1920);
+    }
+
+    .font-p6 {
+        font-size: calc(16px + 20*(100vw - 1920px)/1920);
+    }
+
+    .font-p7 {
+        font-size: calc(18px + 20*(100vw - 1920px)/1920);
+    }
+
+    .font-p10 {
+        font-size: calc(22px + 20*(100vw - 1920px)/1920);
+    }
+}
+
+/* index-con font-size */
+/* set font */
+
+.pop.pop-1-0-1 .btn.ok {
+    background: #5C98BD;
+    color: #fff;
+}
+
+.pop.pop-1-0-1 .btn.cancel {
+    background: #848484;
+    color: #fff;
+}
+
+.pop.pop-1-0-1 .file-box {
+    background: #5C98BD;
+}
+
+.trader-con .search-con {
+    position: relative;
+}
+
+.trader-con .search-con .icon {
+    position: absolute;
+    left: 2px;
+    top: 12px;
+    font-size: 16px;
+    color: #a3a5a7;
+}
+
+.trader-con .search-con .search {
+    display: inline-block;
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 200px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #a3a5a7;
+    padding: 4px 0 4px 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.trader-con .search-con .search::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+.trader-con .search-con .search::-ms-input-placeholder {
+    color: #ccc;
+}
+
+.trader-con .search-con .search::-moz-input-placeholder {
+    color: #ccc;
+}

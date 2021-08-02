@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --imageWidth: 400px;
+      --arrowWidth: 100px;
+      --height: 200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: 'iconfont';
+      /* project id 1496466 */
+      src: url('http://at.alicdn.com/t/font_1496466_jty6zub0nz.eot');
+      src: url('http://at.alicdn.com/t/font_1496466_jty6zub0nz.eot?#iefix') format('embedded-opentype'),
+        url('http://at.alicdn.com/t/font_1496466_jty6zub0nz.woff2') format('woff2'),
+        url('http://at.alicdn.com/t/font_1496466_jty6zub0nz.woff') format('woff'),
+        url('http://at.alicdn.com/t/font_1496466_jty6zub0nz.ttf') format('truetype'),
+        url('http://at.alicdn.com/t/font_1496466_jty6zub0nz.svg#iconfont') format('svg');
+    }
+
+    .iconfont {
+      font-family: "iconfont" !important;
+      font-size: 16px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    #box {
+      position: relative;
+      width: var(--imageWidth);
+      height: var(--height);
+      overflow: hidden;
+    }
+
+    #multi-circles {
+      position: absolute;
+      right: 30px;
+      bottom: 10px;
+      z-index: 2;
+    }
+
+    #multi-circles li {
+      float: left;
+      margin-right: 15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background-color: rgb(240, 240, 240);
+    }
+
+    #multi-circles li.active {
+      background-color: rgb(245, 40, 40);
+    }
+
+    #multi-images {
+      position: absolute;
+      top: 0;
+      width: calc(var(--imageWidth)*7);
+      height: var(--height);
+      /* transition: 1s; */
+      left: -400px;
+    }
+
+    #multi-images img {
+      float: left;
+      width: var(--imageWidth);
+      height: var(--height);
+    }
+
+    #arrow-right,
+    #arrow-left {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      margin-top: -20px;
+      width: 30px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: block;
+      z-index: 1;
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    #arrow-right {
+      right: 0;
+    }
+
+    #arrow-left {
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <i class="iconfont" id="arrow-left">&#xe63c;</i>
+    <i class="iconfont" id="arrow-right">&#xe65c;</i>
+    <ul id="multi-circles">
+      <li class="active"></li>
+      <li ></li>
+      <li ></li>
+      <li ></li>
+      <li ></li>
+    </ul>
+    <div id="multi-images">
+      <img src="images/5.jpg" data-index="4">
+      <img src="images/1.jpg" data-index="0" class="active">
+      <img src="images/2.jpg" data-index="1">
+      <img src="images/3.jpg" data-index="2">
+      <img src="images/4.jpg" data-index="3">
+      <img src="images/5.jpg" data-index="4">
+      <img src="images/1.jpg" data-index="0">
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      var banner_slider=$('#box'),
+		pics=$('#multi-images'),
+		items=$('#multi-images img'),
+		pic_width=400,
+		dots=$('#multi-circles li'),
+		btn_prev=$('#arrow-left'),
+		btn_next=$('#arrow-right'),
+		current=0,
+		timmer=null,
+		size=dots.length;
+    console.log(dots)
+    timmer=setInterval(slider,3000);
+	// 定义一个鼠标滑过判断事件
+	banner_slider.hover(function(){
+		clearInterval(timmer);
+	},function(){
+		timmer=setInterval(slider,3000);
+	});
+	function slider(){
+		current++;
+		doSlider();
+	}
+	function doSlider(){
+		// 圆点按钮轮播
+		dots.removeClass('active').eq(current%size).addClass('active');
+		// 图片轮播
+		pics.stop().animate({
+			left:-(current+1)*pic_width
+		},1000,function(){
+			if(current==size){
+				current=0;
+				pics.css('left',-(current+1)*pic_width+'px');
+			}else if(current==-1){				
+				current=size-1;
+				pics.css('left',-(size)*pic_width+'px');
+			}
+		});
+	}
+	timmer=setInterval(slider,3000);
+	// 点击上一张按钮切换图片
+	btn_prev.click(function(){
+		current--;
+		doSlider();
+	});
+	// 点击下一张按钮切换图片	
+	btn_next.click(function(){
+		current++;
+		doSlider();
+	});
+	// 点击圆点切换图片
+	dots.click(function(){
+		current=$(this).index();
+		doSlider();
+	});
+    })
+   
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>jQuery蓝色的大转盘抽奖代码 - 站长素材</title>
+
+<style>
+	body{
+		background: #047a82;
+	}
+.box-lottery {
+  position: relative;
+  margin: 0 auto;
+  width: 81.7vw;
+  height:81.9vw;
+  
+}
+.lottery-wrap{
+  width: 100%;
+  height: 100%;
+  background: url(./mobL-turntable.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.lottery-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 23.1vw;
+  height: 23.1vw;
+  background: url(./mobL-center.png) no-repeat;
+  background-size: 100% 100%;
+}
+.lottery-btn i {
+  position: absolute;
+  top: -29vw;
+  left: 50%;
+  margin-left: -3.2vw;
+  width: 6.25vw;
+  height:10.8vw;
+  background: url(./pointer.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-transform-origin: 50% 102.5px;
+  -moz-transform-origin: 50% 102.5px;
+  -ms-transform-origin: 50% 102.5px;
+  transform-origin: 50% 102.5px;
+}
+</style>
+
+</head>
+<body>
+
+	<div class="box-lottery">
+		<div class="lottery-wrap">
+		</div>
+		<a class="lottery-btn" href="javascript:void(0);"><i></i></a>
+	</div>
+
+<script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <script src="https://cdn.suoluomei.com/common/js2.0/jquery.rotate/jquery.rotate.min.js"></script>
+<script>
+	function rotateFunc(angle, dur) {
+  $(".lottery-wrap").rotate({
+    angle: 0, //旋转到指定的角度
+    animateTo: angle, //旋转到指定的角度
+    duration: dur, //持续时间
+    callback: function() {　
+      
+      alert("抽完了")
+    }
+  });
+}
+	$(document).on('click', '.lottery-btn', function () {
+      var rotate = 0,random=Math.random(),msg="谢谢参与"; //角度
+      // 中奖等级
+      switch (msg) {
+        case "谢谢参与": 
+        if(random>0.5){
+
+          rotate = 1800+135;
+        }else{
+          rotate = 1800+315;
+        }
+          break;
+        case "0.01coin": 
+        if(random>0.5){
+
+          rotate = 1800+90;
+        }else{
+          rotate = 1800+270;
+        }
+          break;
+        case "$200实践账户": 
+        if(random>0.5){
+
+          rotate = 1800+45;
+        }else{
+          rotate = 1800+225;
+        }
+          break;
+        case "1coin": 
+        if(random>0.5){
+
+          rotate = 1800+0;
+        }else{
+          rotate = 1800+180;
+        }
+          break;
+      }
+     rotateFunc(rotate, 3000);
+    })
+</script>
+
+</body>
+</html>

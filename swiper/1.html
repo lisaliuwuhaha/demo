@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>滚动图片</title>
+		<style type="text/css">
+			body, div {
+				border: 0;
+				margin: 0;
+				padding: 0;
+			}
+			#outer {
+				overflow: hidden;
+				width: 400px;
+				height: 200px;
+			}
+			#inner {
+				height: 200px;
+				width: 1800px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="outer">
+			<div id="inner">
+				<img src="images/1.jpg">
+				<img src="images/2.jpg">
+				<img src="images/3.jpg">
+				<img src="images/4.jpg">
+				<img src="images/5.jpg">
+			</div>
+		</div>
+		<a href="#" οnclick="prev()">prev</a>
+		<a href="#" οnclick="next()">next</a>
+	</body>
+	<script type="text/javascript">
+		function next(){
+			document.getElementById("outer").scrollLeft+=400;
+		}
+		function prev(){
+			document.getElementById("outer").scrollLeft-=400;
+		}
+	</script>
+</html>

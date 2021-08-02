@@ -1,0 +1,12 @@
+$nav-color: #F90;
+$font-color: #fff;
+.box {
+  width: 300px;
+  height: 400px;
+  background: $nav-color;
+  &-title {
+    height: 30px;
+    line-height: 30px;
+    color: $font-color;
+  }
+}

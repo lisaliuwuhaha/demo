@@ -1,0 +1,281 @@
+<html lang="en">
+
+<head>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>一个好看的进度页面</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <!-- //首先要先设置一个div，给定大小 -->
+<div id="m"></div>
+
+<!-- //进行操作 -->
+<script type="text/javascript">
+var x,y;
+
+$("#m").mousemove(function(e){
+    x=e.pageX-$("#m").offset().left;
+    y=e.pageY-$("#m").offset().top;
+    $(this).html("X="+x+"|Y="+y);
+})
+</script>
+
+  <style type="text/css">
+  #m{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  }
+    * {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    a,
+    img {
+      border: 0;
+    }
+
+    body {
+      background: #fff;
+      font-size: 12px;
+    }
+
+    /* stepInfo */
+    .le-progress {
+      margin: 80px auto;
+      height: 23px;
+      width: 80%;
+      display: flex;
+      align-items: center;
+    }
+
+    .le-progress>div {
+	position: relative;
+}
+.le-progress .stepIco>div{
+	position: absolute;
+}
+
+.stepIco {
+	margin-right: 3px;
+	margin-left: 3px;
+	width: 23px;
+	height:23px;
+	border-radius: 50%;
+background:-webkit-linear-gradient(left,#bcacfa,#936de0);
+background:-o-linear-gradient(right,#bcacfa,#936de0);
+background:-moz-linear-gradient(right,#bcacfa,#936de0);
+background:linear-gradient(to right,#bcacfa,#936de0);
+text-align: center;
+line-height: 23px;
+color: #fff;
+cursor: pointer;
+z-index: 1;
+}
+.stepIco.rest{
+	width: 19px;
+	height: 19px;
+	border:2px solid #dddfe1;
+	background: #fff;
+	color: #aeaeae;
+	line-height: 19px;
+}
+.stepIco .info{
+	padding: 0 26px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #f4f5f6;
+	border-radius: 40px;
+	color: #464a53;
+	width: 251px;
+	top: -53px;
+	left: -135.5px;
+	display: none;
+}
+.stepIco .info.info_1{
+	left: -40px;
+}
+.stepIco .info.info_8{
+	left: -230px;
+}
+.stepIco .info span{
+	color: #936de0;
+}
+.stepIco .info span:first-of-type{
+	margin-right: 20px;
+}
+.stepIco:hover .info{
+	display: block;
+}
+.stepIco .le-month{
+	color: #464a53;
+	font-size: 14px;
+	margin-top: 10px;
+}
+.stepIco.rest .le-month{
+	margin-top: 14px;
+}
+.line-tri{
+	width: 188px;
+	height: 4px;
+	border: 1px solid #baa2ec;
+	background:-webkit-linear-gradient(right,#bcacfa,#936de0);
+background:-o-linear-gradient(left,#bcacfa,#936de0);
+background:-moz-linear-gradient(left,#bcacfa,#936de0);
+background:linear-gradient(to left,#bcacfa,#936de0);
+border-left: none;
+border-right: none;
+flex:1
+}
+.line-tri.rest{
+	background: #eef0f2;
+	border: 1px solid #eef0f2;
+}
+.line-tri.rest::before{
+	border-left: 6px solid #eef0f2;
+}
+.line-tri.rest::after{
+	border-right: 6px solid #eef0f2;
+}
+.line-tri::before{
+	position: absolute;
+	content:'';
+	width: 0;
+height: 0;
+border-left: 10px solid #936de0;
+border-bottom: 6px solid transparent;
+border-top: 6px solid transparent;
+	top: -4px;
+	left: -5px;
+	z-index: 0;
+}
+.line-tri::after{
+	position: absolute;
+	content:'';
+	width: 0;
+height: 0;
+border-right: 10px solid #bcacfa;
+border-bottom: 6px solid transparent;
+border-top: 6px solid transparent;
+	top: -4px;
+	right: -5px;
+	z-index: 0;
+}
+.box
+{
+    border-radius:0px;
+    width:200px;
+    height:100px;
+    background-color:green;
+    position:relative;
+}
+.content{
+    width:200px;
+    padding-top:50px;
+    overflow:hidden;
+    border-radius:0px;
+    margin: 0 auto;
+    margin-top:50px;
+}
+.box::before
+{
+    position:absolute;
+    top:0;
+    left:0;
+    content:"";
+    z-index:-1;
+    width:210px; /*如果需要圆角的话 不用比box的宽度长,如果不需要圆角需要增长*/
+    height:100px;
+    background-color:green;
+    transform:rotate(-10deg);
+    transform-origin:left top;
+    border-radius:0px;
+}
+  </style>
+  <script type="text/javascript">
+    // function on_mous_move(name) {
+    //     var info = document.getElementsByName(name)[1];
+    //     var value = info.innerHTML;
+    //     info.innerHTML = "&nbsp;❤&nbsp;" + value;
+    //     var div_info = document.getElementsByName(name)[0];
+    //     div_info.style.backgroundColor = "#47009b";
+    // }
+    // function on_mous_out(name) {
+    //     var info = document.getElementsByName(name)[1];
+    //     var value = info.innerHTML;
+    //     info.innerHTML = value.substr(13, value.length);
+    //     var div_info = document.getElementsByName(name)[0];
+    //     div_info.style.backgroundColor = "#45a0f3";
+    // }
+  </script>
+ <div class="content">
+  <div class="box">Hello</div>
+  </div>
+  <div class="le-progress">
+    <div class="stepIco stepIco1" name="info_name_1">01
+      <div class="le-month le-month_1">
+        Sep
+      </div>
+      <div class="info info_1">9月第1周测评等级：<span>AAA</span>测评得分：<span>1256</span></div>
+    </div>
+    <div class="line-tri"></div>
+    <div class="stepIco stepIco2" name="info_name_2">02
+        <div class="le-month le-month_2">
+          Sep
+        </div>
+        <div class="info info_2">9月第2周测评等级：<span>AAA</span>测评得分：<span>1256</span></div>
+      </div>
+      <div class="line-tri"></div>
+    <div class="stepIco stepIco3" name="info_name_3">03
+        <div class="le-month le-month_3">
+          Sep
+        </div>
+        <div class="info info_3">9月第3周测评等级：<span>AAA</span>测评得分：<span>1256</span></div>
+      </div>
+      <div class="line-tri"></div>
+    <div class="stepIco stepIco4" name="info_name_4">04
+        <div class="le-month le-month_4">
+          Sep
+        </div>
+        <div class="info info_4">9月第2周测评等级：<span>AAA</span>测评得分：<span>1256</span></div>
+      </div>
+      <div class="line-tri rest"></div>
+      <div class="stepIco stepIco5 rest" name="info_name_5">01
+          <div class="le-month le-month_5">
+            Oct
+          </div>
+          <div class="info info_5">10月第1周测评等级：<span>AAA</span>测评得分：<span>1256</span></div>
+        </div>
+        <div class="line-tri rest"></div>
+      <div class="stepIco stepIco6 rest" name="info_name_6">02
+          <div class="le-month le-month_6">
+            Oct
+          </div>
+          <div class="info info_6">10月第2周测评等级：<span>AAA</span>测评得分：<span>1256</span></div>
+        </div>
+        <div class="line-tri rest"></div>
+      <div class="stepIco stepIco7 rest" name="info_name_6">03
+          <div class="le-month le-month_7">
+            Oct
+          </div>
+          <div class="info info_7">10月第3周测评等级：<span>AAA</span>测评得分：<span>1256</span></div>
+        </div>
+        <div class="line-tri rest"></div>
+        <div class="stepIco stepIco8 rest" name="info_name_6">04
+            <div class="le-month le-month_8">
+              Oct
+            </div>
+            <div class="info info_8">10月第4周测评等级：<span>AAA</span>测评得分：<span>1256</span></div>
+          </div>
+  </div>
+
+</body>
+
+</html>

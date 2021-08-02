@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>交易员大赛手机端</title>
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 450px;
+            height: 480px;
+            background-color: bisque;
+            /* overflow: hidden; */
+            resize: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box page">
+        <input type="text" id='datetime-picker'/>
+    </div>
+    <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.js' charset='utf-8'></script>
+    <script>
+  $(function(){
+	// 点击出现时间
+	$(document).on("pageInit",'.page',function(e) {
+        console.log(e)
+   
+    $("#datetime-picker").datetimePicker({
+      value: ['1985', '12', '04', '9', '34']
+    });
+});
+$.init();
+})
+    </script>
+</body>
+
+</html>
